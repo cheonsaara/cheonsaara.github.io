@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun, Bidadari Kecilku!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Ulang Tahun, Bidadari Kecilku!</h1>
+    <p>Hari ini adalah hari spesial karena dunia pernah kedatangan kamu.<br>Terima kasih udah jadi cahaya dalam hariku.</p>
+    
+    <div class="slideshow">
+      <img src="images/img1.jpg" class="slide">
+      <img src="images/img2.jpg" class="slide">
+      <img src="images/img3.jpg" class="slide">
+    </div>
+
+    <button id="secretBtn">Klik aku!</button>
+    <p id="secretMessage" class="hidden">
+      Aku bersyukur banget bisa kenal kamu.<br>
+      Kamu selalu bisa bikin aku senyum cuma dengan jadi diri kamu sendiri.<br>
+      Jangan pernah berubah ya... aku sayang kamu, selalu.
+    </p>
+
+    <audio autoplay loop>
+      <source src="audio/song.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Confetti saat halaman dibuka
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+
+    // Hati jatuh
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
